@@ -15,8 +15,7 @@ var srunner  = require('srunner')
        .demand('p')
        .argv;
 
-
-if (argv.t) {
+if (argv.test) {
     runner
        .switchBranch(argv.origin)
        .findCommits(argv.pattern)
