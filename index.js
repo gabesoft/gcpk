@@ -1,6 +1,7 @@
 var srunner  = require('srunner')
+  , path     = require('path')
   , optimist = require('optimist')
-  , runner   = srunner.init({ dir: './scripts' })
+  , runner   = srunner.init({ dir: path.join(__dirname, './scripts') })
   , argv     = optimist
        .usage('Git cherry pick commits from one branch to another.\nUsage: gcp')
        .alias('o', 'origin')
@@ -17,8 +18,8 @@ var srunner  = require('srunner')
 
 if (argv.test) {
     runner
-       .switchBranch(argv.origin)
-       .findCommits(argv.pattern)
+       .switchBranch({ branch: argv.origin })
+       .findCommits({ pattern: argv.pattern })
        .printCommits()
 } else {
     runner
