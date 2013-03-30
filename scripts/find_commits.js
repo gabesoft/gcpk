@@ -1,5 +1,9 @@
 var git = require('../lib/git');
 
+function isLetter (ch) {
+    return /[a-zA-Z]/.test(ch);
+}
+
 function hasUpperCase (text) {
     var len = text.length
       , c   = null
@@ -7,7 +11,7 @@ function hasUpperCase (text) {
 
     for (i = 0; i < len; i++){
         c = text.charAt(i);
-        if (c === c.toUpperCase()) {
+        if (isLetter(c) && c === c.toUpperCase()) {
             return true;
         }
     };
@@ -16,6 +20,10 @@ function hasUpperCase (text) {
 }
 
 module.exports = function (state, options, cb) {
+    if (!options.pattern) { 
+        return cb(new Error('No search pattern specified'));
+    }
+
     var regopts = hasUpperCase(options.pattern) ? '' : 'i'
       , pattern = new RegExp(options.pattern, regopts);
 

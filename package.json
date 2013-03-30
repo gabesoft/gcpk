@@ -1,13 +1,13 @@
 {
     "name"         : "gcp"
   , "version"      : "0.0.1"
-  , "description"  : "A command line utility to automate git cherry pick"
+  , "description"  : "A command line utility to automate git cherry pick of multiple commits"
   , "main"         : "index.js"
   , "preferGlobal" : true
   , "dependencies" : {
         "colors"   : "~0.6.0"
       , "async"    : "~0.2.6"
-      , "srunner"  : "~0.0.10"
+      , "srunner"  : "~0.0.11"
       , "optimist" : "~0.3.5"
     }
   , "repository" : {
@@ -19,7 +19,7 @@
       , "email" : "gabesoft@gmail.com"
     }
   , "bin" : {
-        "gcp": "./bin/gcp"
+        "gcpk": "./bin/gcpk"
     }
   , "license" : "MIT"
 }

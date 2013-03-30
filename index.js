@@ -12,21 +12,22 @@ var srunner  = require('srunner')
        .describe('p', 'Pattern to match when searching for commits')
        .alias('t', 'test')
        .describe('t', 'Test run just to see selected commits')
+       .boolean('t')
        .demand('d')
        .demand('p')
        .argv;
 
-if (argv.test) {
+runner
+   .saveCurrentBranch()
+   .switchBranch({ branch: argv.origin })
+   .findCommits({ pattern: argv.pattern })
+   .printCommits()
+
+if (!argv.test) {
     runner
-       .switchBranch({ branch: argv.origin })
-       .findCommits({ pattern: argv.pattern })
-       .printCommits()
-} else {
-    runner
-       .switchBranch(argv.origin)
-       .findCommits(argv.pattern)
-       .switchBranch(argv.dest)
+       .switchBranch({ branch: argv.dest })
        .applyCommits()
 }
 
+runner.restoreCurrentBranch()
 runner.run();
