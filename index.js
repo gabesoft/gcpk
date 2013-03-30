@@ -21,13 +21,14 @@ runner
    .saveCurrentBranch()
    .switchBranch({ branch: argv.origin })
    .findCommits({ pattern: argv.pattern })
-   .printCommits()
+   .printCommits();
 
 if (!argv.test) {
     runner
        .switchBranch({ branch: argv.dest })
-       .applyCommits()
+       .applyCommits();
 }
 
-runner.restoreCurrentBranch()
-runner.run();
+runner
+   .restoreCurrentBranch()
+   .run();
