@@ -1,6 +1,6 @@
 {
     "name"         : "gcp"
-  , "version"      : "0.0.1"
+  , "version"      : "0.0.2"
   , "description"  : "A command line utility to automate git cherry pick of multiple commits"
   , "main"         : "index.js"
   , "preferGlobal" : true
