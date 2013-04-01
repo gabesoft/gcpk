@@ -1,25 +1,25 @@
 {
-    "name"         : "gcpk"
-  , "version"      : "0.0.2"
-  , "description"  : "A command line utility to automate git cherry pick of multiple commits"
-  , "main"         : "index.js"
-  , "preferGlobal" : true
-  , "dependencies" : {
-        "colors"   : "~0.6.0"
-      , "async"    : "~0.2.6"
-      , "srunner"  : "~0.1.0"
-      , "optimist" : "~0.3.5"
-    }
-  , "repository" : {
-        "type" : "git"
-      , "url"  : "git@github.com:gabesoft/gcpk.git"
-    }
-  , "author" : {
-        "name"  : "Gabriel Adomnicai"
-      , "email" : "gabesoft@gmail.com"
-    }
-  , "bin" : {
-        "gcpk": "./bin/gcpk"
-    }
-  , "license" : "MIT"
+  "name": "gcpk",
+  "version": "0.0.3",
+  "description": "A command line utility to automate git cherry pick of multiple commits",
+  "main": "index.js",
+  "preferGlobal": true,
+  "dependencies": {
+    "colors": "~0.6.0",
+    "async": "~0.2.6",
+    "srunner": "~0.1.0",
+    "optimist": "~0.3.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:gabesoft/gcpk.git"
+  },
+  "author": {
+    "name": "Gabriel Adomnicai",
+    "email": "gabesoft@gmail.com"
+  },
+  "bin": {
+    "gcpk": "./bin/gcpk"
+  },
+  "license": "MIT"
 }
