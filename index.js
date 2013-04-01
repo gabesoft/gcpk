@@ -1,7 +1,7 @@
-var srunner  = require('srunner')
+var Runner   = require('srunner').Runner
+  , runner   = new Runner()
   , path     = require('path')
   , optimist = require('optimist')
-  , runner   = srunner.init({ dir: path.join(__dirname, './scripts') })
   , argv     = optimist
        .usage('Git cherry pick multiple commits.\nUsage: $0')
        .alias('o', 'origin')
@@ -18,6 +18,7 @@ var srunner  = require('srunner')
        .argv;
 
 runner
+   .init({ dir: path.join(__dirname, './scripts') })
    .saveCurrentBranch()
    .switchBranch({ branch: argv.origin })
    .findCommits({ pattern: argv.pattern })
