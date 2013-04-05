@@ -4,17 +4,10 @@ var Runner   = require('srunner').Runner
   , optimist = require('optimist')
   , argv     = optimist
        .usage('Git cherry pick multiple commits.\nUsage: $0')
-       .alias('o', 'origin')
-       .describe('o', 'Origin branch (defaults to the current branch)')
-       .alias('d', 'dest')
-       .describe('d', 'Destination branch')
-       .alias('p', 'pattern')
-       .describe('p', 'Pattern to match when searching for commits')
-       .alias('t', 'test')
-       .describe('t', 'Test run just to see the selected commits')
-       .boolean('t')
-       .demand('d')
-       .demand('p')
+       .alias('o', 'origin').describe('o', 'Origin branch (defaults to the current branch)')
+       .alias('d', 'dest').describe('d', 'Destination branch').demand('d')
+       .alias('p', 'pattern').describe('p', 'Pattern to match when searching for commits').demand('p')
+       .alias('t', 'test').describe('t', 'Test run just to see the selected commits').boolean('t')
        .argv;
 
 runner
