@@ -27,7 +27,7 @@ module.exports = function (state, options, cb) {
     var regopts = hasUpperCase(options.pattern) ? '' : 'i'
       , pattern = new RegExp(options.pattern, regopts);
 
-    git.log({}, function (err, list) {
+    git.log(function (err, list) {
         if (err) { return cb(err); }
 
         state.commits = list.filter(function (commit) {

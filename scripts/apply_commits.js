@@ -4,6 +4,8 @@ var async = require('async')
 require('colors');
 
 module.exports = function (state, options, cb) {
+    if (!state.commits) { throw new Error('No commits specified'); }
+
     var commits = state.commits.splice(0);
 
     commits.reverse()

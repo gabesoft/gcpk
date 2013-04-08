@@ -1,6 +1,11 @@
 require('colors');
 
 module.exports = function (state, options, cb) {
+    if (!state.commits) { 
+        console.log('No commits found');
+        return;
+    }
+
     var total = 'Total  : ' + state.commits.length + ' commits';
 
     state.commits.forEach(function (commit) {
